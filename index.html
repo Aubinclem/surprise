@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Juste un site tranquille...</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #startButton {
+      background: #ff0000;
+      color: white;
+      font-size: 24px;
+      padding: 20px 40px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="startButton">Lancer la vidéo</button>
+  <video id="rickroll" controls>
+    <source src="https://cdn.discordapp.com/attachments/1203635148017639454/1374401617893265428/rickroll.mp4?ex=682deac0&is=682c9940&hm=c1d2e8ecfffcf25e58ff25ae287fa1ed8519d1d3a8115b592b2f585645be14e7&" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+
+  <script>
+    const button = document.getElementById('startButton');
+    const video = document.getElementById('rickroll');
+
+    button.addEventListener('click', () => {
+      button.style.display = 'none';
+      video.style.display = 'block';
+      video.play();
+    });
+  </script>
+
+</body>
+</html>
